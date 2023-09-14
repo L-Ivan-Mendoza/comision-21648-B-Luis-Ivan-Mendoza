@@ -21,7 +21,11 @@
                     <i>
                         <%= posteo.content %>
                     </i><br>
-                    <img src="<%= posteo.img_url %>" alt="">
+                    <img src="<%= posteo.img_url %>" alt=""><br>
+
+                    <a href="/posteos/edit/<%= posteo.id %>">📝 Edit</a><br>
+                    <a href="/posteos/delete/<%= posteo.id %>">🧨 Delete</a>
+
                 </p>
             </li>
             <% }); %>
