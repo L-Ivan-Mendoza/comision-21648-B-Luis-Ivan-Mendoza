@@ -1,6 +1,9 @@
 
 --BIENVENIDO--
 
+**COMISION QUE NO LLEGO A VER VARIABLE DE ENTORNO**
+Lenguajes de Programación I - Comisión 21648 B - EPICA
+
 Para ejecutar el proyecto se debe iniciar con el comando **"npm install"** en la consola, teniendo previamente instalado node.JS, luego se debera ejecurar **"npm run dev"** para crear el localhost. Ademas se necesitara una base de datos que utilice Sequelize.
 
 Se debe ingresar desde un navegador web a **"http://localhost:4000/posteos"** para poder visualizar las vistas y funcionalidades creadas.
