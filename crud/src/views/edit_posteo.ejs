@@ -4,19 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../public/bootstrap_5.3.2.css">
+    <link rel="stylesheet" href="../../public/styles.css">
+    <script src="../../public/bootstrap_5.3.2.js" defer></script>
+    <title>Editando Posteo</title>
 </head>
 
-<body>
-    <a href="/posteos">Return</a>
-    <h1>Edit POST</h1>
-    <form action="/posteos/edit" method="post">
-        <input type="text" name="id" value="<%= post.id %>" hidden>
-        <input type="text" name="title" placeholder="Title" value="<%= post.title %>"><br>
-        <textarea name="content" id="" cols="30" rows="10" placeholder="Text here"><%= post.content %></textarea><br>
-        <input type="text" name="img_url" value="<%= post.img_url %>"><br>
-        <button>Edit</button>
-    </form>
+<body class="bg-secondary">
+    <%- include ('navbar')%>
+        <h1 class="d-flex justify-content-center">Editar Posteos</h1>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <form action="/posteos/edit" method="post">
+                        <input type="text" name="id" value="<%= post.id %>" hidden>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="title" aria-describedby="action" name="title"
+                                placeholder="Title" value="<%= post.title %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Contenido</label>
+                            <textarea class="form-control" name="content" id="" cols="15" rows="5"
+                                placeholder="Text here"><%= post.content %></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="text" class="form-control" id="img_url" name="img_url"
+                                value="<%= post.img_url %>">
+                            <label class="form-label" for="img_url">Url de la imagen</label>
+                        </div>
+                        <button class="btn btn-primary">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include ('footer')%>
 </body>
 
 </html>

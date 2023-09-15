@@ -4,32 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/bootstrap_5.3.2.css">
+    <link rel="stylesheet" href="../../public/styles.css">
+    <script src="../../public/bootstrap_5.3.2.js" defer></script>
 
-    <title>Document</title>
+    <title>Tus Posteos</title>
 </head>
 
-<body>
-    <a href="/posteos/new">Crear Nuevo Posteo</a>
-    <h1>My Posts</h1>
-    <ul>
-        <% posteos.forEach((posteo)=> { %>
-            <li>
-                <p>
-                    <b>
-                        <%= posteo.title %>
-                    </b>
-                    <i>
-                        <%= posteo.content %>
-                    </i><br>
-                    <img src="<%= posteo.img_url %>" alt=""><br>
+<body class="bg-dark">
 
-                    <a href="/posteos/edit/<%= posteo.id %>">📝 Edit</a><br>
-                    <a href="/posteos/delete/<%= posteo.id %>">🧨 Delete</a>
+    <%- include ('navbar')%>
 
-                </p>
-            </li>
-            <% }); %>
-    </ul>
+        <h1 style="color: bisque;">Tus Posteos</h1>
+        <div>
+            <ul class="d-flex row">
+                <% posteos.forEach((posteo)=> { %>
+                    <li class="col-md-4 p-3">
+                        <div class=" ">
+                            <div class="card" style="width: 18rem;">
+                                <img src="<%= posteo.img_url %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-3">
+                                        <%= posteo.title %>
+                                    </h5>
+                                    <p class="card-text fs-5">
+                                        <%= posteo.content %>
+                                    </p>
+                                    <p class="fs-6" style="color: #5f5f5f">
+                                        <i>
+                                            <%= posteo.createdAt %>
+                                        </i>
+                                    </p>
+                                    <a href="/posteos/edit/<%= posteo.id %>"" class=" btn btn-primary"> Editar</a>
+                                    <a href="/posteos/delete/<%= posteo.id %>"" class=" btn btn-danger"> Eliminar</a>
+
+                                    <!-- No se termino de hacer funcionar el modal -->
+
+                                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete">
+                                    Eliminar Posteo
+                                    </button>
+
+                                    <div class="modal" tabindex="-1" id="delete">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Eliminar Posteo</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>¿Estas seguro de eliminar el posteo?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">No</button>
+                                                <a href="/posteos/delete/<%= posteo.id %>"" class=" btn btn-primary">
+                                                    Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+
+        <%- include ('footer')%>
+
+            <script src="../../public/bootstrap_5.3.2.js"></script>
 </body>
 
 </html>
