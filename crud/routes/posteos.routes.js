@@ -1,10 +1,11 @@
 const { Router } = require('express');
-const { getPosteos, formCreatePosteo, createPosteo, formEditPosteo, editPosteo, deletePosteo } = require('../src/controllers/posteos.controllers');
+const { getPosteos, formCreatePosteo, createPosteo, formEditPosteo, editPosteo, deletePosteo, formLogin } = require('../src/controllers/posteos.controllers');
 
 const router = Router();
 
 router.get('/', getPosteos);
 router.get('/new', formCreatePosteo);
+router.get('/login', formLogin);
 router.get('/edit/:id', formEditPosteo);
 router.get('/delete/:id', deletePosteo);
 

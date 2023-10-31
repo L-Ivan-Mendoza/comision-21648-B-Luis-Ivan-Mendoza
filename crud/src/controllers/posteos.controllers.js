@@ -6,6 +6,10 @@ const getPosteos = async (req, res) => {
     res.render("index", { posteos });
 };
 
+const formLogin = async (req, res) => {
+    res.render("login");
+}
+
 const formCreatePosteo = async (req, res) => {
     res.render("new_posteo");
 };
@@ -52,4 +56,4 @@ const deletePosteo = async (req, res) => {
     res.redirect("/posteos");
 }
 
-module.exports = { getPosteos, formCreatePosteo, createPosteo, formEditPosteo, editPosteo, deletePosteo };
+module.exports = { getPosteos, formCreatePosteo, createPosteo, formEditPosteo, editPosteo, deletePosteo, formLogin };
